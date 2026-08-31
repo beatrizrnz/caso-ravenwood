@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Caso de Ravenwood - O Quarto</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main class="game-container">
+    <!-- VISÃO GERAL DO QUARTO -->
+    <div id="cenario-quarto" class="quarto-container">
+      <!-- Imagem principal do quarto completo -->
+      <img id="imagem-principal" src="quarto-geral.jpg" alt="Quarto de Vanessa em Pixel Art Noir">
+      
+      <!-- PAINEL DE OPÇÕES DE INSPEÇÃO -->
+      <div class="menu-opcoes">
+        <h3>QUARTO - OPÇÕES</h3>
+        <button onclick="inspecionar('cabeceira')">(VER A CABECEIRA)</button>
+        <button onclick="inspecionar('penteadeira')">(VER PENTEADEIRA)</button>
+        <button onclick="inspecionar('cama')">(VER CAMA)</button>
+        <button onclick="inspecionar('planta')">(VER MESA COM PLANTA)</button>
+      </div>
+    </div>
+
+    <!-- TELA DE ZOOM / MODAL DE INSPEÇÃO -->
+    <div id="modal-zoom" class="modal hidden">
+      <div class="modal-conteudo">
+        <img id="zoom-img" src="" alt="Detalhe do objeto">
+        <div class="painel-detalhes">
+          <p id="zoom-texto"></p>
+          <button id="btn-anotar" onclick="anotarPista()">[ ANOTAR NO CADERNO ]</button>
+          <button onclick="fecharZoom()">[ VOLTAR AO QUARTO ]</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CADERNO DE ANOTAÇÕES DO DETETIVE -->
+    <div id="caderno" class="caderno-box">
+      <h4>CADERNO DE ANOTAÇÕES</h4>
+      <ul id="lista-anotacoes">
+        <!-- As pistas vão aparecer aqui ao clicar em anotar -->
+      </ul>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

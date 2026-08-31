@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* CONTAINER PRINCIPAL DO JOGO */
+.quarto-container {
+  position: relative;
+  width: 960px;
+  height: 540px;
+  background-color: #1f2833;
+  border: 3px solid #45a29e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+#imagem-principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* MENU DE OPÇÕES */
+.menu-opcoes {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(11, 12, 16, 0.85);
+  border: 2px solid #66fcf1;
+  padding: 15px;
+  border-radius: 4px;
+  width: 240px;
+  z-index: 5;
+}
+
+.menu-opcoes h3 {
+  color: #66fcf1;
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.menu-opcoes button {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  background: transparent;
+  color: #c5c6c7;
+  border: 1px solid #45a29e;
+  padding: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.menu-opcoes button:hover {
+  background: #45a29e;
+  color: #0b0c10;
+  font-weight: bold;
+}
+
+/* MODAL DE ZOOM */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.hidden { 
+  display: none !important; 
+}
+
+.modal-conteudo {
+  display: flex;
+  background: #1f2833;
+  border: 2px solid #66fcf1;
+  padding: 20px;
+  gap: 20px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-conteudo img {
+  width: 400px;
+  height: 225px;
+  object-fit: cover;
+  image-rendering: pixelated;
+  border: 1px solid #45a29e;
+}
+
+.painel-detalhes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.painel-detalhes p {
+  color: #c5c6c7;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.painel-detalhes button {
+  margin-top: 10px;
+  background: transparent;
+  color: #66fcf1;
+  border: 1px solid #66fcf1;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.painel-detalhes button:hover {
+  background: #66fcf1;
+  color: #0b0c10;
+}
+
+/* CADERNO DE ANOTAÇÕES */
+.caderno-box {
+  width: 960px;
+  background: #1f2833;
+  border: 2px solid #45a29e;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
+
+.caderno-box h4 {
+  color: #66fcf1;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #45a29e;
+  padding-bottom: 5px;
+}
+
+.caderno-box ul {
+  list-style-position: inside;
+  color: #c5c6c7;
+  font-size: 13px;
+}
+
+.caderno-box li {
+  margin-bottom: 5px;
+}
