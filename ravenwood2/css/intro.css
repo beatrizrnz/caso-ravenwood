@@ -1,0 +1,578 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: "Special Elite", serif;
+    overflow: hidden;
+}
+
+/* =================================
+   CENAS
+================================= */
+
+.cena {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        opacity 2s ease,
+        visibility 2s ease;
+}
+
+.cena.ativa {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =================================
+   FUNDOS
+================================= */
+
+.fundo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    animation: zoom 10s ease forwards;
+}
+
+.mansao {
+    background-image: url("../img/nada.jpg");
+}
+
+.biblioteca {
+    background-image: url("../img/nada.jpg");
+}
+
+.mansao-escolha {
+    background-image: url("../img/nada.jpg");
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.75)
+        );
+}
+
+.overlay.forte {
+    background: rgba(0,0,0,0.60);
+}
+
+.overlay.muito-escuro {
+    background: rgba(0,0,0,0.82);
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1.08);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* =================================
+   TEXTO
+================================= */
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 30px;
+}
+
+.data {
+    font-size: 18px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.conteudo h1 {
+    font-family: "Cinzel", serif;
+    font-size: 80px;
+    letter-spacing: 15px;
+    margin-bottom: 35px;
+}
+
+.texto {
+    font-size: 28px;
+    line-height: 1.7;
+    margin: 10px 0;
+    text-shadow: 2px 2px 5px black;
+}
+
+.destaque {
+    font-family: "Cinzel", serif;
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+/* =================================
+   JORNAL
+================================= */
+
+.jornal-conteudo {
+    position: relative;
+    z-index: 2;
+    width: 760px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 45px 55px;
+    background:
+        linear-gradient(
+            rgba(232,221,197,0.96),
+            rgba(218,204,175,0.96)
+        );
+    color: #241c14;
+    border: 1px solid #b7a98d;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: rotate(-1deg) scale(0.85);
+    opacity: 0;
+    animation: abrirJornal 1.5s ease forwards;
+}
+
+@keyframes abrirJornal {
+    from {
+        opacity: 0;
+        transform: rotate(-5deg) scale(0.75);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(-1deg) scale(1);
+    }
+}
+
+.nome-jornal {
+    font-family: "Cinzel", serif;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.data-jornal {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+.linha {
+    width: 100%;
+    height: 1px;
+    background: #5f5546;
+    margin: 18px 0;
+}
+
+.jornal-conteudo h2 {
+    font-family: "Cinzel", serif;
+    text-align: center;
+    font-size: 39px;
+    line-height: 1.15;
+    margin: 22px 0;
+}
+
+.subtitulo {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.colunas-jornal {
+    columns: 2;
+    column-gap: 35px;
+}
+
+.colunas-jornal p {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 17px;
+}
+
+.noticia-destaque {
+    border-top: 1px solid #6f6452;
+    border-bottom: 1px solid #6f6452;
+    margin: 25px 0;
+    padding: 15px;
+}
+
+.noticia-destaque p {
+    font-family: "Cinzel", serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.frase-jornal {
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* =================================
+   RELÓGIO
+================================= */
+
+.relogio-cena {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.relogio-titulo {
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+.relogio {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            #e4d7b9 0%,
+            #c8b993 70%,
+            #8b7957 100%
+        );
+    border: 12px solid #3a2e20;
+    box-shadow:
+        0 0 0 5px #817057,
+        0 20px 50px rgba(0,0,0,0.8);
+    margin: auto;
+}
+
+.relogio::before {
+    content: "12";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #211a12;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.relogio::after {
+    content: "3";
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #211a12;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ponteiro {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    background: #211a12;
+    border-radius: 5px;
+}
+
+.ponteiro-hora {
+    width: 8px;
+    height: 75px;
+    transform: translateX(-50%) rotate(143deg);
+}
+
+.ponteiro-minuto {
+    width: 5px;
+    height: 105px;
+    transform: translateX(-50%) rotate(282deg);
+}
+
+.ponto-central {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #211a12;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.horario {
+    font-family: "Cinzel", serif;
+    font-size: 75px;
+    letter-spacing: 12px;
+    margin-top: 35px;
+    opacity: 0;
+    animation: aparecerHorario 2s 1s ease forwards;
+}
+
+@keyframes aparecerHorario {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.relogio-texto {
+    font-size: 20px;
+    opacity: 0.65;
+    margin-top: 12px;
+}
+
+/* =================================
+   FINAL
+================================= */
+
+.final {
+    position: relative;
+    text-align: center;
+    z-index: 5;
+    padding: 30px;
+}
+
+.pequeno {
+    font-size: 15px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.final h1 {
+    font-family: "Cinzel", serif;
+    font-size: 72px;
+    line-height: 1.1;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+}
+
+.frase-final {
+    font-size: 21px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 45px;
+}
+
+/* =================================
+   BOTÃO
+================================= */
+
+#comecar {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 16px 35px;
+    font-family: "Special Elite", serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        color 0.3s,
+        letter-spacing 0.3s;
+}
+
+#comecar:hover {
+    background: white;
+    color: black;
+    letter-spacing: 5px;
+}
+
+/* =================================
+   CENA FICHA DE AUTÓPSIA
+================================= */
+
+.container-autopsia {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.img-autopsia {
+    max-width: 100%;
+    max-height: 85vh;
+    border: 2px solid #817057;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+    border-radius: 4px;
+}
+
+/* =================================
+   CENA DE ESCOLHA DA INVESTIGAÇÃO
+================================= */
+
+/* =================================
+   OVERLAY MAIS CLARO (MANSÃO VISÍVEL)
+================================= */
+
+.overlay.suave {
+    background: rgba(0, 0, 0, 0.35); /* Deixa a foto da mansão bem visível */
+}
+
+/* =================================
+   POSICIONAMENTO NA PARTE INFERIOR
+================================= */
+
+.container-escolha-inferior {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+
+.caixa-escolha {
+    background: rgba(10, 10, 10, 0.88);
+    border: 2px solid #817057;
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 340px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+}
+
+.btn-menu {
+    background: transparent;
+    color: #e4d7b9;
+    border: 1px solid #817057;
+    padding: 14px 20px;
+    font-family: "Special Elite", serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+    background: #e4d7b9;
+    color: #050505;
+    border-color: #ffffff;
+}
+/* =================================
+   SOM
+================================= */
+
+#botaoSom {
+    position: fixed;
+    z-index: 100;
+    top: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* =================================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 768px) {
+    .conteudo h1 {
+        font-size: 45px;
+        letter-spacing: 8px;
+    }
+
+    .texto {
+        font-size: 21px;
+    }
+
+    .destaque {
+        font-size: 30px;
+    }
+
+    .jornal-conteudo {
+        padding: 30px;
+    }
+
+    .jornal-conteudo h2 {
+        font-size: 26px;
+    }
+
+    .colunas-jornal {
+        columns: 1;
+    }
+
+    .relogio {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ponteiro-hora {
+        height: 55px;
+    }
+
+    .ponteiro-minuto {
+        height: 75px;
+    }
+
+    .horario {
+        font-size: 50px;
+        letter-spacing: 6px;
+    }
+
+    .final h1 {
+        font-size: 45px;
+        letter-spacing: 5px;
+    }
+
+    .titulo-detetive {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .subtitulo-detetive {
+        font-size: 16px;
+    }
+
+    .btn-opcao {
+        width: 100%;
+        min-width: auto;
+    }
+}

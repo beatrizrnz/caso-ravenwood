@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>O Caso de Ravenwood</title>
+
+    <link rel="stylesheet" href="css/intro.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- MÚSICA -->
+    <audio id="musica" loop>
+        <source src="audio/jazz.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="botaoSom">🔇</button>
+
+    <main id="intro">
+
+        <!-- CENA 1 -->
+        <section class="cena ativa" id="cena1">
+            <div class="fundo mansao"></div>
+            <div class="overlay"></div>
+            <div class="conteudo">
+                <p class="data">14 DE OUTUBRO DE 1926</p>
+                <h1>RAVENWOOD</h1>
+                <p class="texto">Londres.</p>
+                <p class="texto">Uma noite fria e chuvosa.</p>
+            </div>
+        </section>
+
+        <!-- CENA 2 -->
+        <section class="cena" id="cena2">
+            <div class="fundo biblioteca"></div>
+            <div class="overlay forte"></div>
+            <div class="conteudo">
+                <p class="texto">Naquela noite,</p>
+                <p class="texto destaque">Edmund Ravenwood</p>
+                <p class="texto">estava em sua biblioteca.</p>
+            </div>
+        </section>
+
+        <!-- CENA 3 -->
+        <section class="cena" id="cena3">
+            <div class="fundo biblioteca"></div>
+            <div class="overlay muito-escuro"></div>
+            <div class="conteudo">
+                <p class="texto">Algumas horas depois...</p>
+                <p class="texto destaque">algo terrível aconteceria.</p>
+            </div>
+        </section>
+
+        <!-- CENA 4 — JORNAL -->
+        <section class="cena" id="cena4">
+            <div class="jornal-conteudo">
+                <p class="nome-jornal">THE POIROT GAZETTE</p>
+                <p class="data-jornal">LONDRES — 15 DE OUTUBRO DE 1926</p>
+                <div class="linha"></div>
+
+                <h2>MORTE MISTERIOSA<br>NA MANSÃO RAVENWOOD</h2>
+                <p class="subtitulo">Homem rico é encontrado morto em sua biblioteca</p>
+                <div class="linha"></div>
+
+                <div class="colunas-jornal">
+                    <p>Edmund Ravenwood, proprietário da famosa Mansão Ravenwood, foi encontrado morto em sua biblioteca na manhã desta quinta-feira.</p>
+                    <p>Segundo os primeiros exames realizados, a causa da morte teria sido envenenamento.</p>
+                    <p>Os médicos ainda não conseguiram determinar o horário exato da morte.</p>
+                    <p>Quatro pessoas estavam presentes na mansão durante a noite.</p>
+                </div>
+
+                <div class="noticia-destaque">
+                    <p>A POLÍCIA ACREDITA QUE O RESPONSÁVEL AINDA ESTEJA DENTRO DA MANSÃO.</p>
+                </div>
+
+                <p class="frase-jornal">"A verdade permanece um mistério."</p>
+            </div>
+        </section>
+
+        <!-- CENA 5 — RELÓGIO -->
+        <section class="cena" id="cena5">
+            <div class="relogio-cena">
+                <p class="relogio-titulo">O RELÓGIO DA BIBLIOTECA</p>
+
+                <div class="relogio">
+                    <div class="ponteiro ponteiro-hora"></div>
+                    <div class="ponteiro ponteiro-minuto"></div>
+                    <div class="ponto-central"></div>
+                </div>
+
+                <div class="horario">23:47</div>
+                <p class="relogio-texto">Ele parou exatamente nesse horário.</p>
+            </div>
+        </section>
+
+        <!-- CENA 6 — TELA INICIAL DA INVESTIGAÇÃO -->
+        <section class="cena" id="cena6">
+            <div class="final">
+                <p class="pequeno">UM MISTÉRIO. QUATRO SUSPEITOS.</p>
+                <h1>O CASO DE<br>RAVENWOOD</h1>
+                <p class="frase-final">A verdade está escondida entre as pistas.</p>
+                <button id="comecar">COMEÇAR INVESTIGAÇÃO</button>
+            </div>
+        </section>
+
+        <!-- CENA 7 — FICHA DE AUTÓPSIA -->
+        <section class="cena" id="cenaAutopsia">
+            <div class="overlay forte"></div>
+            <div class="container-autopsia">
+                <img src="img/ficha.jpg" alt="Ficha de Autópsia" class="img-autopsia">
+            </div>
+        </section>
+
+        <!-- CENA DE ESCOLHA DE INVESTIGAÇÃO -->
+        <!-- CENA DE ESCOLHA DE INVESTIGAÇÃO -->
+        <section class="cena" id="cena8">
+            <div class="fundo mansao-escolha"></div>
+            <div class="overlay suave"></div>
+
+            <div class="container-escolha-inferior">
+                <div class="caixa-escolha">
+                    <button class="btn-menu" id="btnSuspeitos">ENTREVISTAR SUSPEITOS</button>
+                    <button class="btn-menu" id="btnMansao">INVESTIGAR MANSÃO</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/intro.js"></script>
+
+</body>
+</html>
